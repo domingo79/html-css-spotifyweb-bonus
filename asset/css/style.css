@@ -1,0 +1,504 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.dbg {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+/* common rules  */
+ul {
+  list-style: none;
+}
+a {
+  color: #7d7f84;
+  text-decoration: none;
+}
+/* SCHELETRO DELLA PAGINA CON IL MIO CONTENITORE WRAPPER>> NAV / MAIN & FOOTER  */
+/* contenitore di tutta la struttura  */
+#wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+/* nav di sinistra contenitorizzata a sinistra */
+nav {
+  float: left;
+  height: calc(100% - 70px);
+  width: 200px;
+  background-color: #000;
+  overflow: hidden;
+}
+/* main contenitorizzata a destra */
+main {
+  float: left;
+  height: calc(100% - 70px);
+  width: calc(100% - 200px);
+  background-color: #141922;
+  overflow: auto;
+} 
+/* footer ricavato per differenza di altezza della main e nav  */
+footer {
+  height: 70px;
+  width: 100%;
+  background-color: #282828;
+}
+/* codice per le sezioni di qui in poi  */
+/* display flex column per nav sinistra  */
+.nav_d_flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70%;
+  width: 200px;
+  text-align: left;
+  margin-left: 10px;
+}
+.logo img 
+{
+  height: 35px;
+  margin: 15px 0;
+  padding: 0 5px;
+}
+.logo img:hover 
+{
+  box-shadow: -1px 1px 5px yellow inset;
+}
+.menu_pulsanti img {
+  height: 25px;
+  margin: 0 5px;
+}
+.menu_pulsanti li > a {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: darkgray;
+}
+.menu_pulsanti ul li a:hover {
+  color: #fff;
+  border-left: 2px solid #adff2f;
+  transition: 0.5s;
+}
+.playlist_utente 
+{
+  padding-top: 30px;
+  margin: 0 5px;
+}
+.playlist_utente h6 {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+.playlist_utente a:hover 
+{
+  color: #fff;
+}
+.playlist_utente ul li:hover 
+{ 
+  transform: translateX(30px);
+  transition: .5s ease-in-out;
+}
+.fa-plus {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  color: black;
+  vertical-align: middle;
+  line-height: 30px;
+  text-align: center;
+  opacity: 0.8;
+  margin-right: 10px;
+}
+.playlist_utente > a {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.playlist_utente ul li {
+  margin: 10px 0;
+  font-size: .8rem;
+  font-weight: 700;
+}
+.profilo_utente ul li a:hover {
+  color: #fff;
+}
+.profilo_utente ul li:first-of-type {
+  border-bottom: 1px solid #fff;
+  width: 70%;
+}
+.profilo_utente ul li {
+  padding: 10px 0;
+}
+.profilo_utente a {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.profilo_utente img {
+  height: 15px;
+  vertical-align: bottom;
+}
+.profilo_avatar {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #fff;
+}
+.profilo_avatar img {
+  height: 20px;
+  background-color: lightslategray;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+/* icone nascoste */
+.icone
+{
+  display: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.icone img {
+  display: none;
+  height: 30px;
+  margin: 5px 0;
+}
+#xs_download
+{
+  height: 18px;
+  margin-left: 5px;
+}
+.xs_img
+{
+  display: none;
+  background-color: lightslategray;
+  border-radius: 50%;
+}
+/* sezione della main colonna destra */
+.barra_pulsante {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background-color: #080b12;
+  padding-right: 20px;
+}
+.barra_pulsante a {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 20px;
+}
+.barra_pulsante a:hover {
+  transform: scale(1.1);
+  transition: ease 0.5s;
+}
+/* menu in alto nella main  */
+.menu_principale 
+{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.menu_principale > ul li 
+{
+  display: inline;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 10px;
+}
+.menu_principale > ul li:hover a {
+  border-bottom: 2px solid #adff2f;
+  color: #fff;
+  transition: 0.5s;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+/* regole comuni per le card e row  */
+.album_recenti, .album_creati, .album_popolari{
+  padding: 0 40px;
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: nowrap
+}
+.card {
+  width: 150px;
+  height: 200px;
+  margin: 5px;
+  text-align: center;
+  background-color: #141922;
+}
+.album_recenti:hover .card
+{
+  filter: blur(5px);
+  transform: scale(.7);
+}
+.album_recenti .card:hover
+{
+  filter: blur(0);
+  transform: scale(1);
+  flex-grow: 0.15;
+}
+.card_img {
+  position: relative;
+}
+.card_img img 
+{
+  width: 100%;
+  filter: brightness(70%);
+}
+.card_img:hover img
+{
+  content: '';
+  filter: brightness(100%);
+}
+.card_img h4 {
+  padding: 10px 0;
+
+}
+.card_img h6 {
+  color: darkgrey;
+
+}
+/* album recenti creati suggeriti regole specifiche  */
+.album_recenti h2 {
+  margin: 0 0 20px 10px;
+  padding: 10px 0;
+}
+.album_creati h2 {
+  margin-left: 10px;
+  padding-top: 30px;
+}
+.album_creati h6,
+.album_popolari h6 {
+  margin-left: 10px;
+  color: darkgray;
+  padding: 10px 0;
+}
+.album_popolari h2 {
+  margin-left: 10px;
+  padding-bottom: 10px;
+}
+.album_popolari img {
+  border-radius: 50%;
+}
+/* player degli album  */
+/* .fa-play 
+{
+  position: absolute;
+  padding: 15px;
+  border: 3px solid white;
+  border-radius: 50%;
+  top: 10%;
+  left: 20%;
+  transform: translate(46%, 50%);
+  color: #fff;
+  z-index: 1;
+  display: none;
+}
+.card_img:hover i 
+{
+  display: block;
+  transition: ease-in 0.5s;
+} */
+/* filtro in hover  */
+
+/* footer ************ */
+.mixer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* colonna sinistra .mixer */
+.album{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.copertina img
+{
+  height: 50px;
+  margin: 10px;
+}
+.titoli_copertina{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 5px;
+}
+.titoli_copertina span
+{
+  font-size: .5rem;
+  color: darkgray;
+  font-weight: 700;
+}
+.likes
+{
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+.likes i{
+  color: darkgray;
+  margin: 5px;
+}
+.likes a:first-child  i:hover
+{
+  color: rgb(209, 15, 15);
+}
+.likes a:last-child i:hover
+{
+   color: #adff2f;
+}
+/* colonna centrale mixer  */
+.panel
+{
+  flex-grow: 2;
+}
+.controller
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-play-circle
+{
+  font-size: 35px;
+}
+.controller a
+{
+  margin: 0 25px;
+}
+.controller a:hover i
+{
+  color: #fff;
+}
+.progress
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: .5rem;
+}
+.progress > span
+{
+  font-size: 0.7rem;
+}
+.bar_progress
+{
+  position: relative;
+  background-color: #1a1a1a;
+  height: 3px;
+  padding: 2px;
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+  margin: 0 20px;
+}
+.bar_progress:hover > span
+{
+  position: absolute;
+  height: 3px;
+  width: 25%;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+  background-color: #ADFF2F;
+  animation: track .5s ease-in;
+}
+.bar_progress:hover > span::after
+{
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: calc(100% - 5px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ADFF2F;
+}
+@keyframes  track
+{
+  0%
+  {
+  width: 0%;
+  }
+  100%
+  {
+  width: 25%;
+  }
+}
+
+/* colonna destra mixer  */
+.volume
+{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-grow: 1;
+  margin-right: 25px;
+}
+.volume a
+{
+  margin: 0 10px;
+}
+.volume a:hover i
+{
+  color: #fff;
+}
+.vol_bar
+{
+  position: relative;
+  background-color: #1a1a1a;
+  height: 3px;
+  padding: 2px;
+  width: 30%;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+  margin: 0 2px;
+}
+.vol_bar:hover > span
+{
+  position: absolute;
+  height: 3px;
+  width: 32%;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+  background: #ADFF2F;
+  animation: vol .5s ease-in;
+}
+.vol_bar:hover > span::after
+{
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: calc(100% - 5px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ADFF2F;
+}
+@keyframes vol 
+{
+  0%
+  {
+  width: 0%;
+  }
+  100%
+  {
+  width: 25%;
+  }
+}
